@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		h1, p {
+			margin-top: 100px;
+			text-align: center;
+		}
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		img {
+			margin: 20px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Windows 10'a MSYS2 yukleme guide'i</h1>
+	<img src="ss/Untitled.png"   alt="Screenshot"> <br>
+	<p>Siteye girip indirip next next yapiyoruz</p>
+	<img src="ss/Untitled01.png" alt="Screenshot"> <br>
+	<img src="ss/Untitled02.png" alt="Screenshot"> <br>
+	<img src="ss/Untitled03.png" alt="Screenshot"> <br>
+	<p>Onemli: burada uygulamayi calistirmiyoruz</p>
+	<img src="ss/Untitled04.png" alt="Screenshot"> <br>
+	<p>MSYS 3 adet shellden olusuyor. biri 32bit, biri 64bit, biri msysi kustomize etmek amacli. burada secili olani calistiriyoruz</p>
+	<img src="ss/Untitled05.png" alt="Screenshot"> <br>
+	<p>Once genel bir update yapiyoruz bu komutla. buyuk kucuk harf hassas burada</p>
+	<img src="ss/Untitled06.png" alt="Screenshot"> <br>
+	<img src="ss/Untitled08.png" alt="Screenshot"> <br>
+	<p>Kurulacak uygulamalari bu sekilde kuruyoruz. derleyici (gcc) ve debugger (gdb) onemli. digerleri istege bagli. <br>
+	"mingw-w64-x86_64-gcc" demek yerine "gcc" demek icin stringin ilk kismini degiskene atiyoruz. <br>
+	onemli: bu shellde p="..." ile p = "..." farkli anlama geldigi icin bosluk koymuyoruz. <br>
+	msys2 nin sundugu butun packagelerin listesi icin <a href="https://repo.msys2.org/mingw/x86_64/"> https://repo.msys2.org/mingw/x86_64/ </a> var <br>
+	sfml kurmak icin sadece <code>{p}sfml</code> yeterli.
+	</p>
+	<img src="ss/Untitled09.png" alt="Screenshot"> <br>
+	<img src="ss/Untitled10.png" alt="Screenshot"> <br>
+	<img src="ss/Untitled11.png" alt="Screenshot"> <br>
+	<img src="ss/Untitled12.png" alt="Screenshot"> <br>
+	<p>Bu adimi yapmamizin sebebi istedigimiz terminalden gcc yazarak gcc'ye erismek icin $PATH i degistirmek.</p>
+	<img src="ss/Untitled13.png" alt="Screenshot"> <br>
+	<img src="ss/Untitled14.png" alt="Screenshot"> <br>
+	<img src="ss/Untitled15.png" alt="Screenshot"> <br>
+	<img src="ss/Untitled16.png" alt="Screenshot"> <br>
+	<img src="ss/Untitled17.png" alt="Screenshot"> <br>
+	<p>Tamamdir =) Simdi vsCode ile C kodu derlemeye calisalim.</p>
+	<img src="ss/Untitled18.png" alt="Screenshot"> <br>
+	<img src="ss/Untitled19.png" alt="Screenshot"> <br>
+	<img src="ss/Untitled20.png" alt="Screenshot"> <br>
+	<img src="ss/Untitled21.png" alt="Screenshot"> <br>
+	<img src="ss/Untitled22.png" alt="Screenshot"> <br>
+	<p>Eger boyle bir hata almiyorsaniz burayi atlayin</p>
+	<img src="ss/Untitled23.png" alt="Screenshot"> <br>
+	<img src="ss/Untitled24.png" alt="Screenshot"> <br>
+	<img src="ss/Untitled25.png" alt="Screenshot"> <br>
+	<p>Bu menuye erismek icin ctrl+shift+B. Olmuyorsa da ustteki menuden bulun</p>
+	<img src="ss/Untitled26.png" alt="Screenshot"> <br>
+	<img src="ss/Untitled27.png" alt="Screenshot"> <br>
+	<img src="ss/Untitled28.png" alt="Screenshot"> <br>
+	<img src="ss/Untitled29.png" alt="Screenshot"> <br>
+	<p>Yey =)</p>
+	<img src="ss/Untitled31.png" alt="Screenshot"> <br>
+	<p>Simdi sfml i dogru bir sekilde derlemek icin buralari degistirelim <br>
+	-l... olan yere -lsfml-system -lsfml-window -lsfml-graphics yaziyoruz. (audio ve networking kullanacaksak onlari da yaziyoruz) <br>
+	Onemli: burada -l aslinda cizgi ve kucuk L harfi. <br>
+	Bunlar dinamik kutuphane (dll) ve programin derlenmesi icin gerekli. <br>
+	Kodda da include etmek icin: <br>
+	<pre>
+		<code> #include &lt;SFML/Graphics.hpp&gt; </code> <br>
+		demek yeterli =)		
+	</pre>
+	</p>
+	<img src="ss/Untitled32.png" alt="Screenshot"> <br>
+	<p>Burada da duz cmd kullanarak derlemesini gosteriyorum. <br>
+		sfml kullanarak birsey derlemek icin: <br>
+		g++ main.cpp -lsfml-system -lsfml-window -lsfml-graphics <br>
+	</p>
+	<img src="ss/Untitled33.png" alt="Screenshot"> <br>
+	<img src="ss/Untitled34.png" alt="Screenshot"> <br>
+
+</body>
+</html>
